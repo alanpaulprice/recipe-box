@@ -32,17 +32,20 @@ class App extends Component {
   render(){
     return (
       <div>
-        <h1 className='header text-center col-12'>Recipe Box</h1>
+        <h1 className='header text-center'>Recipe Box</h1>
         <Recipe
-          recipeButtonClicked={this.recipeButtonClicked}
           data={this.state}
+          deleteRecipe={this.deleteRecipe.bind(this)}
         />
       </div>
     );
   }
 
-  recipeButtonClicked(recipeIndex){
-    console.log(recipeIndex);
+  deleteRecipe(recipeIndex){
+    let tempState = this.state;
+    tempState.recipes.splice(recipeIndex, 1);
+    this.setState(tempState);
+
   }
 }
 

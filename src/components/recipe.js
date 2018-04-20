@@ -1,30 +1,30 @@
 import React from 'react';
+import RecipeHead from './recipe-head.js';
+import RecipeBody from './recipe-body.js';
 
 const Recipe = props => {
 
-  return props.data.recipes.map((recipe, recipesIndex) => {
+  return props.data.recipes.map((recipe, recipeIndex) => {
     return (
-      <div key={recipesIndex}>
-        <button
-          onClick={() => props.recipeButtonClicked(recipesIndex)}
-          className='recipe-name btn btn-block'
-          type="button"
-          >
-          {recipe.name}
-        </button>
+      <div className='recipe-container' key={recipeIndex}>
 
-        <div className='ingredients'>
-          {recipe.ingredients.map(
-            (ingred, ingredIndex) =>
-            <div key={ingredIndex}>{ingred}</div>)}
-          </div>
-        </div>
-      );
-    });
-  }
+        <RecipeHead
+          recipe={recipe}
+          recipeIndex={recipeIndex}
+        />
 
-  export default Recipe;
+        <RecipeBody
+          recipe={recipe}
+          recipeIndex={recipeIndex}
+          deleteRecipe={props.deleteRecipe}
+        />
+      </div>
+    );
+  });
+}
+
+export default Recipe;
 
 /*
-type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'
 */
