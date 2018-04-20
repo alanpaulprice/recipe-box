@@ -5,7 +5,13 @@ const Recipe = props => {
   return props.data.recipes.map((recipe, recipesIndex) => {
     return (
       <div key={recipesIndex}>
-        <button onClick={() => props.recipeButtonClicked(recipesIndex)} className='recipe-name btn btn-block'>{recipe.name}</button>
+        <button
+          onClick={() => props.recipeButtonClicked(recipesIndex)}
+          className='recipe-name btn btn-block'
+          type="button"
+          >
+          {recipe.name}
+        </button>
 
         <div className='ingredients'>
           {recipe.ingredients.map(
@@ -18,3 +24,7 @@ const Recipe = props => {
   }
 
   export default Recipe;
+
+/*
+type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"
+*/

@@ -2,6 +2,7 @@ import './styles/style.less';
 import './styles/bootstrap.min.css';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
+import 'bootstrap';
 import Recipe from './components/recipe.js';
 
 class App extends Component {
@@ -32,7 +33,10 @@ class App extends Component {
     return (
       <div>
         <h1 className='header text-center col-12'>Recipe Box</h1>
-        <Recipe recipeButtonClicked={this.recipeButtonClicked} data={this.state}/>
+        <Recipe
+          recipeButtonClicked={this.recipeButtonClicked}
+          data={this.state}
+        />
       </div>
     );
   }
