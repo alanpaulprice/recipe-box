@@ -36,11 +36,18 @@ class App extends Component {
     return (
       <div>
         <h1 className='header text-center'>Recipe Box</h1>
-        <button className='btn btn-block'>Add Recipe</button>
-        <Recipe
-          data={this.state}
-          deleteRecipe={this.deleteRecipe.bind(this)}
-        />
+        <div id='accordion'>
+          {this.state.recipes.map((recipe, recipeIndex) => {
+            return (
+              <Recipe
+                key={recipeIndex + recipe}
+                recipe={recipe}
+                recipeIndex={recipeIndex}
+                deleteRecipe={this.deleteRecipe.bind(this)}
+              />
+            );
+          })}
+        </div>
       </div>
     );
   }

@@ -3,28 +3,21 @@ import RecipeHead from './recipe-head.js';
 import RecipeBody from './recipe-body.js';
 
 const Recipe = props => {
+  return (
+    <div className='card' key={props.recipeIndex}>
 
-  return props.data.recipes.map((recipe, recipeIndex) => {
-    return (
-      <div className='recipe-container text-center' key={recipeIndex}>
+      <RecipeHead
+        recipeName={props.recipe.name}
+        recipeIndex={props.recipeIndex}
+      />
 
-        <RecipeHead
-          recipe={recipe}
-          recipeIndex={recipeIndex}
-        />
-
-        <RecipeBody
-          recipe={recipe}
-          recipeIndex={recipeIndex}
-          deleteRecipe={props.deleteRecipe}
-        />
-      </div>
-    );
-  });
+      <RecipeBody
+        recipe={props.recipe}
+        recipeIndex={props.recipeIndex}
+        deleteRecipe={props.deleteRecipe}
+      />
+    </div>
+  );
 }
 
 export default Recipe;
-
-/*
-type='button' data-toggle='collapse' data-target='#collapseExample' aria-expanded='false' aria-controls='collapseExample'
-*/
