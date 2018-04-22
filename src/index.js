@@ -1,5 +1,5 @@
 import './styles/style.less';
-import './styles/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css'//'./styles/bootstrap.min.css';
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap';
@@ -15,15 +15,18 @@ class App extends Component {
       recipes: [
         {
           name: 'pasta',
-          ingredients: ['noodles', 'tomato sauce', 'meatballs']
+          ingredients: ['noodles', 'tomato sauce', 'meatballs'],
+          editing: false
         },
         {
           name: 'special sauce',
-          ingredients: ['rice', 'sausages', 'special sauce']
+          ingredients: ['rice', 'sausages', 'special sauce'],
+          editing: false
         },
         {
           name: 'curry',
-          ingredients: ['rice', 'chicken', 'curry sauce']
+          ingredients: ['rice', 'chicken', 'curry sauce'],
+          editing: false
         }
       ]
     };
@@ -33,6 +36,7 @@ class App extends Component {
     return (
       <div>
         <h1 className='header text-center'>Recipe Box</h1>
+        <button className='btn btn-block'>Add Recipe</button>
         <Recipe
           data={this.state}
           deleteRecipe={this.deleteRecipe.bind(this)}

@@ -6,7 +6,7 @@ const Recipe = props => {
 
   return props.data.recipes.map((recipe, recipeIndex) => {
     return (
-      <div className='recipe-container' key={recipeIndex}>
+      <div className='recipe-container text-center' key={recipeIndex}>
 
         <RecipeHead
           recipe={recipe}
