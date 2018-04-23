@@ -13,21 +13,20 @@ class App extends Component {
     this.state =
     //localStorage.recipes ||
     {
+      adding: false,
+      editing: false,
       recipes: [
         {
           name: 'pasta',
-          ingredients: ['noodles', 'tomato sauce', 'meatballs'],
-          editing: false
+          ingredients: ['noodles', 'tomato sauce', 'meatballs']
         },
         {
           name: 'special sauce',
-          ingredients: ['rice', 'sausages', 'special sauce'],
-          editing: false
+          ingredients: ['rice', 'sausages', 'special sauce']
         },
         {
           name: 'curry',
-          ingredients: ['rice', 'chicken', 'curry sauce'],
-          editing: false
+          ingredients: ['rice', 'chicken', 'curry sauce']
         }
       ]
     };
@@ -49,8 +48,16 @@ class App extends Component {
             );
           })}
         </div>
-        <AddEditModal/>
-        <button type="button" className="btn" data-toggle="modal" data-target="#addEditModal">
+        <AddEditModal
+          editing={this.state.editing}
+          adding={this.state.adding}
+        />
+        <button
+          type="button"
+          className="btn"
+          data-toggle="modal"
+          data-target="#addEditModal"
+          >
           Add Recipe
         </button>
       </div>
@@ -61,7 +68,6 @@ class App extends Component {
     let tempState = this.state;
     tempState.recipes.splice(recipeIndex, 1);
     this.setState(tempState);
-
   }
 }
 

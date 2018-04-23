@@ -1,12 +1,17 @@
-import React from 'react';
+import React, {Component} from 'react';
 
-const AddEditModal = props => {
-  return (
+class AddEditModal extends Component {
+  constructor(props){
+    super(props)
+    this.state = {};
+  }
+  render(){
+    return (
     <div className='modal fade' id='addEditModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
   <div className='modal-dialog' role='document'>
     <div className='modal-content'>
       <div className='modal-header'>
-        <h5 className='modal-title' id='exampleModalLabel'>Modal title</h5>
+        <h5 className='modal-title' id='exampleModalLabel'>Modal Title</h5>
         <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
           <span aria-hidden='true'>&times;</span>
         </button>
@@ -22,6 +27,7 @@ const AddEditModal = props => {
   </div>
 </div>
   );
+}
 };
 
 export default AddEditModal;
