@@ -4,6 +4,7 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap';
 import Recipe from './components/recipe.js';
+import AddEditModal from './components/add-edit-modal';
 
 class App extends Component {
 
@@ -48,6 +49,10 @@ class App extends Component {
             );
           })}
         </div>
+        <AddEditModal/>
+        <button type="button" className="btn" data-toggle="modal" data-target="#addEditModal">
+          Add Recipe
+        </button>
       </div>
     );
   }
