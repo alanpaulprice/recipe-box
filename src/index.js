@@ -57,11 +57,18 @@ class App extends Component {
           className="btn"
           data-toggle="modal"
           data-target="#addEditModal"
+          onClick={this.handleAddRecipeBtnClick.bind(this)}
           >
           Add Recipe
         </button>
       </div>
     );
+  }
+
+  handleAddRecipeBtnClick(){
+    let tempState = this.state;
+    tempState.adding = true;
+    this.setState(tempState);
   }
 
   deleteRecipe(recipeIndex){
