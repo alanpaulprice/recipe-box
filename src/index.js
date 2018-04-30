@@ -4,17 +4,16 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap';
 import Recipe from './components/recipe.js';
-import AddEditModal from './components/add-edit-modal';
+import AddRecipeModal from './components/add-recipe-modal';
 
-class App extends Component {
+class App extends Component{
 
   constructor(props){
     super(props)
     this.state =
     //localStorage.recipes ||
     {
-      adding: false,
-      editing: false,
+      editingIndex: null,
       recipes: [
         {
           name: 'pasta',
@@ -48,7 +47,7 @@ class App extends Component {
             );
           })}
         </div>
-        <AddEditModal
+        <AddRecipeModal
           editing={this.state.editing}
           adding={this.state.adding}
         />
@@ -57,7 +56,7 @@ class App extends Component {
           className="btn"
           data-toggle="modal"
           data-target="#addEditModal"
-          onClick={this.handleAddRecipeBtnClick.bind(this)}
+          onClick={this.beginAddingRecipe.bind(this)}
           >
           Add Recipe
         </button>
@@ -65,10 +64,15 @@ class App extends Component {
     );
   }
 
-  handleAddRecipeBtnClick(){
+  beginAddingRecipe(){
     let tempState = this.state;
     tempState.adding = true;
     this.setState(tempState);
+  }
+
+  beginEditingRecipe(recipeIndex){
+    let tempState = this.state;
+    tempState.editingIndex = recipeIndex;
   }
 
   deleteRecipe(recipeIndex){
