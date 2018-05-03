@@ -1,10 +1,15 @@
 import React, {Component} from 'react';
 
 class AddRecipeModal extends Component{
+
   constructor(props){
     super(props)
-    this.state = {};
+    this.state = {
+      recipeName: '12',
+      ingredients: '22'
+    };
   }
+
   render(){
     return (
       <div className='modal fade' id='addEditModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
@@ -20,23 +25,47 @@ class AddRecipeModal extends Component{
               <form>
                 <div className='form-group'>
                   <label>Recipe Name</label>
-                  <input type='text' className='form-control'></input>
+                  <input
+                    type='text'
+                    className='form-control'
+                    value={this.state.recipeName}
+                    onChange={this.onRecipeNameChange.bind(this)}
+                  />
                 </div>
                 <div className='form-group'>
                   <label>Ingedients</label>
-                  <textarea type='text' className='form-control'></textarea>
+                  <textarea
+                    type='text'
+                    className='form-control'
+                    value={this.state.ingredients}
+                    onChange={this.onIngredientsChange.bind(this)}
+                  />
                   <small className="form-text text-muted">Seperate each ingedient with a comma.</small>
                 </div>
               </form>
             </div>
             <div className='modal-footer'>
               <button type='button' className='btn btn-secondary' data-dismiss='modal'>Close</button>
-              <button type='button' className='btn btn-primary'>Add Recipe</button>
+              <button
+                type='button'
+                className='btn btn-primary'
+                onClick={this.props.addRecipe()}
+                >
+                  Add Recipe
+                </button>
             </div>
           </div>
         </div>
       </div>
     );
+  }
+
+  onRecipeNameChange(event){
+    this.setState(Object.assign(this.state, {recipeName: event.target.value}))
+  }
+
+  onIngredientsChange(event){
+    this.setState(Object.assign(this.state, {ingredients: event.target.value}))
   }
 
 };
