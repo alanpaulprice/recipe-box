@@ -48,7 +48,7 @@ class App extends Component{
           })}
         </div>
         <AddRecipeModal
-          addRecipe={() => this.addRecipe.bind(this)}
+          addRecipe={this.addRecipe.bind(this)}
         />
         <button
           type="button"
@@ -72,7 +72,7 @@ class App extends Component{
     let tempState = this.state;
     tempState.recipes.push({
       name: name,
-      ingredients: [ingredients]
+      ingredients: ingredients
     })
     this.setState(tempState);
   }

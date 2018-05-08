@@ -12,11 +12,12 @@ const RecipeBody = props => {
         <div className='card-body'>
           <ul>
             {
-              props.recipe.ingredients.map(
+              props.recipe.ingredients.split(',').map(
                 (item, ind) => {
                   return <li key={ind + item}>{item}</li>
                 }
-              )}
+              )
+            }
             </ul>
             <button type='button' className='btn btn-secondary'>
               Edit

@@ -49,7 +49,7 @@ class AddRecipeModal extends Component{
               <button
                 type='button'
                 className='btn btn-primary'
-                onClick={this.props.addRecipe()}
+                onClick={() => this.props.addRecipe(this.state.recipeName, this.state.ingredients)}
                 >
                   Add Recipe
                 </button>
