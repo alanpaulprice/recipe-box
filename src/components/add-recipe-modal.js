@@ -6,7 +6,7 @@ class AddRecipeModal extends Component{
     super(props)
     this.state = {
       recipeName: '12',
-      ingredients: '22'
+      ingredients: '22, 13'
     };
   }
 
@@ -66,6 +66,7 @@ class AddRecipeModal extends Component{
 
   onIngredientsChange(event){
     this.setState(Object.assign(this.state, {ingredients: event.target.value}))
+    console.log(this.state.ingredients);
   }
 
 };

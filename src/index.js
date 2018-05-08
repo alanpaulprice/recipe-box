@@ -17,15 +17,15 @@ class App extends Component{
       recipes: [
         {
           name: 'pasta',
-          ingredients: ['noodles', 'tomato sauce', 'meatballs']
+          ingredients: 'noodles, tomato sauce, meatballs'
         },
         {
           name: 'special sauce',
-          ingredients: ['rice', 'sausages', 'special sauce']
+          ingredients: 'rice, sausages, special sauce'
         },
         {
           name: 'curry',
-          ingredients: ['rice', 'chicken', 'curry sauce']
+          ingredients: 'rice, chicken, curry sauce'
         }
       ]
     };
@@ -71,8 +71,8 @@ class App extends Component{
   addRecipe(name, ingredients){
     let tempState = this.state;
     tempState.recipes.push({
-      name: 'recipe name',
-      ingredients: ['ingredient 1', 'ingredient 2']
+      name: name,
+      ingredients: [ingredients]
     })
     this.setState(tempState);
   }
