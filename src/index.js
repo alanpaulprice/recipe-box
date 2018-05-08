@@ -71,10 +71,12 @@ class App extends Component{
   addRecipe(name, ingredients){
     let tempState = this.state;
     tempState.recipes.push({
-      name: name,
-      ingredients: ingredients
+      name: this.removeUnwantedSpaces(name),
+      ingredients: this.removeUnwantedSpaces(ingredients)
     })
     this.setState(tempState);
+    console.log('tempstate', tempState);
+    console.log('state', this.state);
   }
 
   beginEditingRecipe(recipeIndex){
@@ -86,6 +88,10 @@ class App extends Component{
     let tempState = this.state;
     tempState.recipes.splice(recipeIndex, 1);
     this.setState(tempState);
+  }
+
+  removeUnwantedSpaces(str){
+    return str.replace(/\s{2,}/g, ' ').trim();
   }
 }
 
