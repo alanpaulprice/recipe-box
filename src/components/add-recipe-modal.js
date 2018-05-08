@@ -49,6 +49,7 @@ class AddRecipeModal extends Component{
               <button
                 type='button'
                 className='btn btn-primary'
+                data-dismiss='modal'
                 onClick={() => this.props.addRecipe(this.state.recipeName, this.state.ingredients)}
                 >
                   Add Recipe
@@ -66,7 +67,6 @@ class AddRecipeModal extends Component{
 
   onIngredientsChange(event){
     this.setState(Object.assign(this.state, {ingredients: event.target.value}))
-    console.log(this.state.ingredients);
   }
 
 };

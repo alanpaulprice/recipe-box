@@ -75,8 +75,6 @@ class App extends Component{
       ingredients: this.removeUnwantedSpaces(ingredients)
     })
     this.setState(tempState);
-    console.log('tempstate', tempState);
-    console.log('state', this.state);
   }
 
   beginEditingRecipe(recipeIndex){
