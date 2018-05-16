@@ -22,8 +22,12 @@ const RecipeBody = props => {
             <button type='button' className='btn btn-secondary'>
               Edit
             </button>
-            <button type='button' className='btn btn-danger'
-              onClick={() => props.deleteRecipe(props.recipeIndex)}>
+            <button
+              type='button'
+              className='btn btn-danger'
+              data-toggle="modal"
+              data-target="#deleteModal"
+              onClick={() => props.beginDeletingRecipe(props.recipeIndex)}>
               Delete
             </button>
           </div>

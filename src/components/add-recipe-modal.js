@@ -12,11 +12,11 @@ class AddRecipeModal extends Component{
 
   render(){
     return (
-      <div className='modal fade' id='addEditModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+      <div className='modal fade' id='addModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
         <div className='modal-dialog' role='document'>
           <div className='modal-content'>
             <div className='modal-header'>
-              <h5 className='modal-title' id='exampleModalLabel'>Add Recipe</h5>
+              <h5 className='modal-title'>Add Recipe</h5>
               <button type='button' className='close' data-dismiss='modal' aria-label='Close'>
                 <span aria-hidden='true'>&times;</span>
               </button>
@@ -45,7 +45,7 @@ class AddRecipeModal extends Component{
               </form>
             </div>
             <div className='modal-footer'>
-              <button type='button' className='btn btn-secondary' data-dismiss='modal'>Close</button>
+              <button type='button' className='btn btn-secondary' data-dismiss='modal'>Cancel</button>
               <button
                 type='button'
                 className='btn btn-primary'
@@ -54,21 +54,21 @@ class AddRecipeModal extends Component{
                 >
                   Add Recipe
                 </button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-  }
+      );
+    }
 
-  onRecipeNameChange(event){
-    this.setState(Object.assign(this.state, {recipeName: event.target.value}))
-  }
+    onRecipeNameChange(event){
+      this.setState(Object.assign(this.state, {recipeName: event.target.value}))
+    }
 
-  onIngredientsChange(event){
-    this.setState(Object.assign(this.state, {ingredients: event.target.value}))
-  }
+    onIngredientsChange(event){
+      this.setState(Object.assign(this.state, {ingredients: event.target.value}))
+    }
 
-};
+  };
 
-export default AddRecipeModal;
+  export default AddRecipeModal;

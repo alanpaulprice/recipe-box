@@ -12,7 +12,7 @@ const Recipe = props => {
       <RecipeBody
         recipe={props.recipe}
         recipeIndex={props.recipeIndex}
-        deleteRecipe={props.deleteRecipe}
+        beginDeletingRecipe={props.beginDeletingRecipe}
       />
     </div>
   );

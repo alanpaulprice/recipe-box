@@ -4,7 +4,8 @@ import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
 import 'bootstrap';
 import Recipe from './components/recipe.js';
-import AddRecipeModal from './components/add-recipe-modal';
+import AddRecipeModal from './components/add-recipe-modal.js';
+import DeleteRecipeModal from './components/delete-recipe-modal.js';
 
 class App extends Component{
 
@@ -13,7 +14,8 @@ class App extends Component{
     this.state =
     //localStorage.recipes ||
     {
-      editingIndex: null,
+      editTargetIndex: null,
+      deleteTargetIndex: null,
       recipes: [
         {
           name: 'pasta',
@@ -42,29 +44,38 @@ class App extends Component{
                 key={recipeIndex + recipe}
                 recipe={recipe}
                 recipeIndex={recipeIndex}
-                deleteRecipe={this.deleteRecipe.bind(this)}
+                beginDeletingRecipe={this.beginDeletingRecipe.bind(this)}
               />
             );
           })}
         </div>
-        <AddRecipeModal
-          addRecipe={this.addRecipe.bind(this)}
-        />
         <button
           type="button"
           className="btn"
           data-toggle="modal"
-          data-target="#addEditModal"
+          data-target="#addModal"
           onClick={this.beginAddingRecipe.bind(this)}
           >
           Add Recipe
         </button>
+
+        <DeleteRecipeModal
+          deleteRecipe={this.deleteRecipe.bind(this)}
+        />
+        <AddRecipeModal
+          addRecipe={this.addRecipe.bind(this)}
+        />
       </div>
     );
   }
 
   beginAddingRecipe(){
+    // clear add modal fields when clicked
+  }
+
+  beginDeletingRecipe(recipeIndex){
     let tempState = this.state;
+    tempState.deleteTargetIndex = recipeIndex;
     this.setState(tempState);
   }
 
@@ -82,9 +93,9 @@ class App extends Component{
     tempState.editingIndex = recipeIndex;
   }
 
-  deleteRecipe(recipeIndex){
+  deleteRecipe(){
     let tempState = this.state;
-    tempState.recipes.splice(recipeIndex, 1);
+    tempState.recipes.splice(this.state.deleteTargetIndex, 1);
     this.setState(tempState);
   }
 
