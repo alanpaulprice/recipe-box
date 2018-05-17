@@ -18,18 +18,23 @@ const RecipeBody = props => {
                 }
               )
             }
-            </ul>
-            <button type='button' className='btn btn-secondary'>
-              Edit
-            </button>
-            <button
-              type='button'
-              className='btn btn-danger'
-              data-toggle="modal"
-              data-target="#deleteModal"
-              onClick={() => props.beginDeletingRecipe(props.recipeIndex)}>
-              Delete
-            </button>
+          </ul>
+          <button type='button' className='btn btn-secondary'>
+            Edit
+          </button>
+          <a
+            data-toggle='collapse'
+            data-target={'#collapse' + props.recipeIndex}
+            >
+              <button
+                type='button'
+                className='btn btn-danger'
+                data-toggle="modal"
+                data-target="#deleteModal"
+                onClick={() => props.beginDeletingRecipe(props.recipeIndex)}>
+                Delete
+              </button>
+            </a>
           </div>
         </div>
       );
