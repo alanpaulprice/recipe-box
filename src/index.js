@@ -14,8 +14,8 @@ class App extends Component{
     this.state =
     //localStorage.recipes ||
     {
-      editTargetIndex: null,
-      deleteTargetIndex: null,
+      editTargetIndex: 0,
+      deleteTargetIndex: 0,
       recipes: [
         {
           name: 'pasta',
@@ -61,6 +61,7 @@ class App extends Component{
 
         <DeleteRecipeModal
           deleteRecipe={this.deleteRecipe.bind(this)}
+          nameOfRecipeToBeDeleted={this.state.recipes[this.state.deleteTargetIndex].name}
         />
         <AddRecipeModal
           addRecipe={this.addRecipe.bind(this)}
