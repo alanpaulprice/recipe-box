@@ -1,16 +1,6 @@
 import React, {Component} from 'react';
 
-class AddRecipeModal extends Component{
-
-  constructor(props){
-    super(props)
-    this.state = {
-      recipeName: '12',
-      ingredients: '22, 13'
-    };
-  }
-
-  render(){
+const AddRecipeModal = props => {
     return (
       <div className='modal fade' id='addModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
         <div className='modal-dialog' role='document'>
@@ -28,8 +18,8 @@ class AddRecipeModal extends Component{
                   <input
                     type='text'
                     className='form-control'
-                    value={this.state.recipeName}
-                    onChange={this.onRecipeNameChange.bind(this)}
+                    value={props.name}
+                    onChange={(event) => props.onNewRecipeNameChange(event.target.value)}
                   />
                 </div>
                 <div className='form-group'>
@@ -37,8 +27,8 @@ class AddRecipeModal extends Component{
                   <textarea
                     type='text'
                     className='form-control'
-                    value={this.state.ingredients}
-                    onChange={this.onIngredientsChange.bind(this)}
+                    value={props.ingredients}
+                    onChange={(event) => props.onNewRecipeIngredientsChange(event.target.value)}
                   />
                   <small className="form-text text-muted">Seperate each ingedient with a comma.</small>
                 </div>
@@ -59,16 +49,6 @@ class AddRecipeModal extends Component{
           </div>
         </div>
       );
-    }
-
-    onRecipeNameChange(event){
-      this.setState(Object.assign(this.state, {recipeName: event.target.value}))
-    }
-
-    onIngredientsChange(event){
-      this.setState(Object.assign(this.state, {ingredients: event.target.value}))
-    }
-
   };
 
   export default AddRecipeModal;
