@@ -16,19 +16,24 @@ const DeleteRecipeModal = props => {
           </div>
           <div className='modal-footer'>
             <button type='button' className='btn btn-secondary' data-dismiss='modal'>Cancel</button>
-            <button
-              type='button'
-              className='btn btn-danger'
-              data-dismiss='modal'
-              onClick={() => props.deleteRecipe()}
+            <a
+              data-toggle='collapse'
+              data-target={'#collapse' + props.deleteTargetIndex}
               >
-                Delete Recipe
-              </button>
+                <button
+                  type='button'
+                  className='btn btn-danger'
+                  data-dismiss='modal'
+                  onClick={() => props.deleteRecipe()}
+                  >
+                    Delete Recipe
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    );
-};
+      );
+    };
 
-export default DeleteRecipeModal;
+    export default DeleteRecipeModal;

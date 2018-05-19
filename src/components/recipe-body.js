@@ -22,10 +22,6 @@ const RecipeBody = props => {
           <button type='button' className='btn btn-secondary'>
             Edit
           </button>
-          <a
-            data-toggle='collapse'
-            data-target={'#collapse' + props.recipeIndex}
-            >
               <button
                 type='button'
                 className='btn btn-danger'
@@ -34,7 +30,6 @@ const RecipeBody = props => {
                 onClick={() => props.beginDeletingRecipe(props.recipeIndex)}>
                 Delete
               </button>
-            </a>
           </div>
         </div>
       );

@@ -62,6 +62,7 @@ class App extends Component{
         <DeleteRecipeModal
           deleteRecipe={this.deleteRecipe.bind(this)}
           nameOfRecipeToBeDeleted={this.state.recipes[this.state.deleteTargetIndex].name}
+          deleteTargetIndex={this.state.deleteTargetIndex}
         />
         <AddRecipeModal
           addRecipe={this.addRecipe.bind(this)}
@@ -87,6 +88,7 @@ class App extends Component{
       ingredients: this.removeUnwantedSpaces(ingredients)
     })
     this.setState(tempState);
+    console.log(this.state);
   }
 
   beginEditingRecipe(recipeIndex){
@@ -97,6 +99,7 @@ class App extends Component{
   deleteRecipe(){
     let tempState = this.state;
     tempState.recipes.splice(this.state.deleteTargetIndex, 1);
+    tempState.deleteTargetIndex = 0;
     this.setState(tempState);
   }
 
