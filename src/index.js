@@ -14,8 +14,8 @@ class App extends Component{
     this.state =
     //localStorage.recipes ||
     {
-      editTargetIndex: 0,
-      deleteTargetIndex: 0,
+      editTargetIndex: null,
+      deleteTargetIndex: null,
       recipes: [
         {
           name: 'pasta',
@@ -61,7 +61,7 @@ class App extends Component{
 
         <DeleteRecipeModal
           deleteRecipe={this.deleteRecipe.bind(this)}
-          nameOfRecipeToBeDeleted={this.state.recipes[this.state.deleteTargetIndex].name}
+          nameOfRecipeToBeDeleted={(this.state.deleteTargetIndex !== null) ? this.state.recipes[this.state.deleteTargetIndex].name : ''}
           deleteTargetIndex={this.state.deleteTargetIndex}
         />
         <AddRecipeModal
@@ -88,7 +88,6 @@ class App extends Component{
       ingredients: this.removeUnwantedSpaces(ingredients)
     })
     this.setState(tempState);
-    console.log(this.state);
   }
 
   beginEditingRecipe(recipeIndex){
@@ -99,7 +98,7 @@ class App extends Component{
   deleteRecipe(){
     let tempState = this.state;
     tempState.recipes.splice(this.state.deleteTargetIndex, 1);
-    tempState.deleteTargetIndex = 0;
+    tempState.deleteTargetIndex = null;
     this.setState(tempState);
   }
 
