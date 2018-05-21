@@ -40,7 +40,7 @@ const AddRecipeModal = props => {
                 type='button'
                 className='btn btn-primary'
                 data-dismiss='modal'
-                onClick={() => this.props.addRecipe(this.state.recipeName, this.state.ingredients)}
+                onClick={() => props.addRecipe()}
                 >
                   Add Recipe
                 </button>

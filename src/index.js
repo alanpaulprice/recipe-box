@@ -17,8 +17,8 @@ class App extends Component {
       editTargetIndex: null,
       deleteTargetIndex: null,
       newRecipe: {
-        name: 'hat',
-        ingredients: 'cat'
+        name: '',
+        ingredients: ''
       },
       recipes: [
         {
@@ -76,7 +76,12 @@ class App extends Component {
     }
 
     beginAddingRecipe() {
-      // clear add modal fields when clicked
+      let tempState = this.state;
+      tempState.newRecipe = {
+        name: '',
+        ingredients: ''
+      }
+      this.setState(tempState);
     }
 
     beginDeletingRecipe(recipeIndex) {
@@ -90,11 +95,11 @@ class App extends Component {
       tempState.editingIndex = recipeIndex;
     }
 
-    addRecipe(name, ingredients) {
+    addRecipe() {
       let tempState = this.state;
       tempState.recipes.push({
-        name: this.removeUnwantedSpaces(name),
-        ingredients: this.removeUnwantedSpaces(ingredients)
+        name: this.state.newRecipe.name,
+        ingredients: this.state.newRecipe.ingredients
       })
       this.setState(tempState);
     }
