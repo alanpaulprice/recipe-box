@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 const AddRecipeModal = props => {
     return (
-      <div className='modal fade' id='addModal' tabIndex='-1' role='dialog' aria-labelledby='exampleModalLabel' aria-hidden='true'>
+      <div className='modal fade' id='addModal' tabIndex='-1' role='dialog' aria-labelledby='addModalLabel' aria-hidden='true'>
         <div className='modal-dialog' role='document'>
           <div className='modal-content'>
             <div className='modal-header'>

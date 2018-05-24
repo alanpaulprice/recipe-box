@@ -6,6 +6,7 @@ import 'bootstrap';
 import Recipe from './components/recipe.js';
 import AddRecipeModal from './components/add-recipe-modal.js';
 import DeleteRecipeModal from './components/delete-recipe-modal.js';
+import EditRecipeModal from './components/edit-recipe-modal.js';
 
 class App extends Component {
 
@@ -71,6 +72,9 @@ class App extends Component {
           addRecipe={this.addRecipe.bind(this)}
           onNewRecipeNameChange={this.onNewRecipeNameChange.bind(this)}
           onNewRecipeIngredientsChange={this.onNewRecipeIngredientsChange.bind(this)}
+        />
+
+        <EditRecipeModal
         />
       </div>);
     }
