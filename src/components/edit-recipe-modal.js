@@ -12,7 +12,29 @@ const EditRecipeModal = props => {
             </button>
           </div>
           <div className='modal-body'>
-            body
+
+            <form>
+              <div className='form-group'>
+                <label>Recipe Name</label>
+                <input
+                  type='text'
+                  className='form-control'
+                  value={props.name}
+                  onChange={(event) => props.onEditRecipeNameChange(event.target.value)}
+                />
+              </div>
+              <div className='form-group'>
+                <label>Ingedients</label>
+                <textarea
+                  type='text'
+                  className='form-control'
+                  value={props.ingredients}
+                  onChange={(event) => props.onEditRecipeIngredientsChange(event.target.value)}
+                />
+                <small className="form-text text-muted">Seperate each ingedient with a comma.</small>
+              </div>
+            </form>
+
           </div>
           <div className='modal-footer'>
             <button type='button' className='btn btn-secondary' data-dismiss='modal'>Cancel</button>

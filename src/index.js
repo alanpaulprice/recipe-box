@@ -17,7 +17,11 @@ class App extends Component {
     {
       editTargetIndex: null,
       deleteTargetIndex: null,
-      newRecipe: {
+      addModal: {
+        name: '',
+        ingredients: ''
+      },
+      editModal: {
         name: '',
         ingredients: ''
       },
@@ -68,45 +72,88 @@ class App extends Component {
         nameOfRecipeToBeDeleted={(this.state.deleteTargetIndex !== null) ? this.state.recipes[this.state.deleteTargetIndex].name: ''}
         deleteTargetIndex={this.state.deleteTargetIndex}/>
         <AddRecipeModal
-          name={this.state.newRecipe.name}
-          ingredients={this.state.newRecipe.ingredients}
+          name={this.state.addModal.name}
+          ingredients={this.state.addModal.ingredients}
           addRecipe={this.addRecipe.bind(this)}
-          onNewRecipeNameChange={this.onNewRecipeNameChange.bind(this)}
-          onNewRecipeIngredientsChange={this.onNewRecipeIngredientsChange.bind(this)}
+          onAddRecipeNameChange={this.onAddRecipeNameChange.bind(this)}
+          onAddRecipeIngredientsChange={this.onAddRecipeIngredientsChange.bind(this)}
         />
 
         <EditRecipeModal
+          name={this.state.editModal.name}
+          ingredients={this.state.editModal.ingredients}
+          onEditRecipeNameChange={this.onEditRecipeNameChange.bind(this)}
+          onEditRecipeIngredientsChange={this.onEditRecipeIngredientsChange.bind(this)}
+          editRecipe={this.editRecipe.bind(this)}
         />
       </div>);
     }
-
+    // ===== ADD RECIPE =====
     beginAddingRecipe() {
       let tempState = this.state;
-      tempState.newRecipe = {
+      tempState.addModal = {
         name: '',
         ingredients: ''
       }
       this.setState(tempState);
     }
 
-    beginDeletingRecipe(recipeIndex) {
+    onAddRecipeNameChange(newValue){
       let tempState = this.state;
-      tempState.deleteTargetIndex = recipeIndex;
+      tempState.addModal.name = newValue;
       this.setState(tempState);
     }
 
-    beginEditingRecipe(recipeIndex) {
+    onAddRecipeIngredientsChange(newValue){
       let tempState = this.state;
-      tempState.editTargetIndex = recipeIndex;
+      tempState.addModal.ingredients = newValue;
       this.setState(tempState);
     }
 
     addRecipe() {
       let tempState = this.state;
       tempState.recipes.push({
-        name: this.state.newRecipe.name,
-        ingredients: this.state.newRecipe.ingredients
+        name: this.state.addModal.name,
+        ingredients: this.state.addModal.ingredients
       })
+      this.setState(tempState);
+    }
+
+    // ===== EDIT RECIPE =====
+
+    beginEditingRecipe(recipeIndex) {
+      let tempState = this.state;
+      tempState.editTargetIndex = recipeIndex;
+      tempState.editModal = {
+        name: this.state.recipes[recipeIndex].name,
+        ingredients: this.state.recipes[recipeIndex].ingredients
+      };
+      this.setState(tempState);
+    }
+
+    onEditRecipeNameChange(newValue){
+      let tempState = this.state;
+      tempState.editModal.name = newValue;
+      this.setState(tempState);
+    }
+
+    onEditRecipeIngredientsChange(newValue){
+      let tempState = this.state;
+      tempState.editModal.ingredients = newValue;
+      this.setState(tempState);
+    }
+
+    editRecipe(){
+      let tempState = this.state;
+      tempState.recipes[this.state.editTargetIndex] = this.state.editModal;
+      this.setState(tempState);
+    }
+
+    // ===== DELETE RECIPE =====
+
+    beginDeletingRecipe(recipeIndex) {
+      let tempState = this.state;
+      tempState.deleteTargetIndex = recipeIndex;
       this.setState(tempState);
     }
 
@@ -117,20 +164,10 @@ class App extends Component {
       this.setState(tempState);
     }
 
+    // ===== =====
+
     removeUnwantedSpaces(str) {
       return str.replace(/\s{2,}/g, ' ').trim();
-    }
-
-    onNewRecipeNameChange(newValue){
-      let tempState = this.state;
-      tempState.newRecipe.name = newValue;
-      this.setState(tempState);
-    }
-
-    onNewRecipeIngredientsChange(newValue){
-      let tempState = this.state;
-      tempState.newRecipe.ingredients = newValue;
-      this.setState(tempState);
     }
   }
 

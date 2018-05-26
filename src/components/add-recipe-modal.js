@@ -19,7 +19,7 @@ const AddRecipeModal = props => {
                     type='text'
                     className='form-control'
                     value={props.name}
-                    onChange={(event) => props.onNewRecipeNameChange(event.target.value)}
+                    onChange={(event) => props.onAddRecipeNameChange(event.target.value)}
                   />
                 </div>
                 <div className='form-group'>
@@ -28,7 +28,7 @@ const AddRecipeModal = props => {
                     type='text'
                     className='form-control'
                     value={props.ingredients}
-                    onChange={(event) => props.onNewRecipeIngredientsChange(event.target.value)}
+                    onChange={(event) => props.onAddRecipeIngredientsChange(event.target.value)}
                   />
                   <small className="form-text text-muted">Seperate each ingedient with a comma.</small>
                 </div>
