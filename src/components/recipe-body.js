@@ -24,6 +24,7 @@ const RecipeBody = props => {
             className='btn btn-secondary'
             data-toggle='modal'
             data-target='#editModal'
+            onClick={() => props.beginEditingRecipe(props.recipeIndex)}
             >
               Edit
             </button>

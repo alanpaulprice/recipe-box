@@ -48,6 +48,7 @@ class App extends Component {
                 recipe={recipe}
                 recipeIndex={recipeIndex}
                 beginDeletingRecipe={this.beginDeletingRecipe.bind(this)}
+                beginEditingRecipe={this.beginEditingRecipe.bind(this)}
               />
             );
           })
@@ -96,7 +97,8 @@ class App extends Component {
 
     beginEditingRecipe(recipeIndex) {
       let tempState = this.state;
-      tempState.editingIndex = recipeIndex;
+      tempState.editTargetIndex = recipeIndex;
+      this.setState(tempState);
     }
 
     addRecipe() {

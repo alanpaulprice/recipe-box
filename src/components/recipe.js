@@ -13,6 +13,7 @@ const Recipe = props => {
         recipe={props.recipe}
         recipeIndex={props.recipeIndex}
         beginDeletingRecipe={props.beginDeletingRecipe}
+        beginEditingRecipe={props.beginEditingRecipe}
       />
     </div>
   );
