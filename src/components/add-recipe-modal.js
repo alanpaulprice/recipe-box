@@ -23,7 +23,7 @@ const AddRecipeModal = props => {
                   />
                 </div>
                 <div className='form-group'>
-                  <label>Ingedients</label>
+                  <label>Ingredients</label>
                   <textarea
                     type='text'
                     className='form-control'
