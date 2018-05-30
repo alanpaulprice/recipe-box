@@ -12,7 +12,7 @@ const RecipeBody = props => {
         <div className='card-body'>
           <ul>
             {
-              props.recipe.ingredients.split(',').map(
+              props.recipeIngredients.split(',').map(
                 (item, ind) => {
                   return <li key={ind + item}>{item}</li>
                 }

@@ -10,7 +10,7 @@ const Recipe = props => {
         recipeIndex={props.recipeIndex}
       />
       <RecipeBody
-        recipe={props.recipe}
+        recipeIngredients={props.recipe.ingredients}
         recipeIndex={props.recipeIndex}
         beginDeletingRecipe={props.beginDeletingRecipe}
         beginEditingRecipe={props.beginEditingRecipe}
