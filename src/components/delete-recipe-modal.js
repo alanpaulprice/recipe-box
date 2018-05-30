@@ -12,7 +12,9 @@ const DeleteRecipeModal = props => {
             </button>
           </div>
           <div className='modal-body'>
-            Are you sure you want to delete the recipe '{props.nameOfRecipeToBeDeleted}'?
+            Are you sure you want to delete the recipe '
+            {props.nameOfRecipeToBeDeleted ? props.nameOfRecipeToBeDeleted : 'Untitled'}
+            '?
           </div>
           <div className='modal-footer'>
             <button type='button' className='btn btn-secondary' data-dismiss='modal'>Cancel</button>
