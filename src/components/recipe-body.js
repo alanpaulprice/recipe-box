@@ -10,15 +10,19 @@ const RecipeBody = props => {
       data-parent='#accordion'
       >
         <div className='card-body'>
-          <ul>
-            {
-              props.recipeIngredients.split(',').map(
-                (item, ind) => {
-                  return <li key={ind + item}>{item}</li>
-                }
-              )
-            }
-          </ul>
+          {props.recipeIngredients.length ? (
+            <ul>
+              {
+                props.recipeIngredients.split(',').map(
+                  (item, ind) => {
+                    return <li key={ind + item}>{item}</li>
+                  }
+                )
+              }
+            </ul>
+          ) : (
+            <p>This recipe has no ingredients. Click the 'edit' button below to add some.</p>
+          )}
           <button
             type='button'
             className='btn btn-secondary'

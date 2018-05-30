@@ -10,7 +10,7 @@ const RecipeHead = props => {
           data-target={'#collapse' + props.recipeIndex}
           aria-controls={'collapse' + props.recipeIndex}
           >
-          {props.recipeName}
+          {props.recipeName ? props.recipeName : 'Untitled'}
         </button>
       </h5>
     </div>
