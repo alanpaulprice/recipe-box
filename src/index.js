@@ -7,37 +7,29 @@ import Recipe from './components/recipe.js';
 import AddRecipeModal from './components/add-recipe-modal.js';
 import DeleteRecipeModal from './components/delete-recipe-modal.js';
 import EditRecipeModal from './components/edit-recipe-modal.js';
-
+localStorage.clear()
 class App extends Component {
 
   constructor(props) {
     super(props)
-    this.state =
-    //localStorage.recipes ||
-    {
-      editTargetIndex: null,
-      deleteTargetIndex: null,
-      addModal: {
-        name: '',
-        ingredients: ''
-      },
-      editModal: {
-        name: '',
-        ingredients: ''
-      },
-      recipes: [
+    if (!localStorage.getItem('appData')) {
+      localStorage.setItem('appData', JSON.stringify(
         {
-          name: 'pasta',
-          ingredients: 'noodles, tomato sauce, meatballs'
-        }, {
-          name: 'special sauce',
-          ingredients: 'rice, sausages, special sauce'
-        }, {
-          name: 'curry',
-          ingredients: 'rice, chicken, curry sauce'
+          editTargetIndex: null,
+          deleteTargetIndex: null,
+          addModal: {
+            name: '',
+            ingredients: ''
+          },
+          editModal: {
+            name: '',
+            ingredients: ''
+          },
+          recipes: []
         }
-      ]
-    };
+      ))
+    }
+    this.state = JSON.parse(localStorage.getItem('appData'));
   }
 
   render() {
@@ -117,6 +109,7 @@ class App extends Component {
         ingredients: this.state.addModal.ingredients
       })
       this.setState(tempState);
+      //localStorage.setItem('appData', this.state);
     }
 
     // ===== EDIT RECIPE =====
@@ -147,6 +140,7 @@ class App extends Component {
       let tempState = this.state;
       tempState.recipes[this.state.editTargetIndex] = this.state.editModal;
       this.setState(tempState);
+      //localStorage.setItem('appData', this.state);
     }
 
     // ===== DELETE RECIPE =====
@@ -162,6 +156,7 @@ class App extends Component {
       tempState.recipes.splice(this.state.deleteTargetIndex, 1);
       tempState.deleteTargetIndex = null;
       this.setState(tempState);
+      //localStorage.setItem('appData', this.state);
     }
 
     // ===== =====
@@ -172,3 +167,31 @@ class App extends Component {
   }
 
   ReactDOM.render(<App/>, document.getElementById('container'));
+
+  /*
+  {
+  editTargetIndex: null,
+  deleteTargetIndex: null,
+  addModal: {
+  name: '',
+  ingredients: ''
+},
+editModal: {
+name: '',
+ingredients: ''
+},
+recipes: []
+}
+
+
+{
+name: 'pasta',
+ingredients: 'noodles, tomato sauce, meatballs'
+}, {
+name: 'special sauce',
+ingredients: 'rice, sausages, special sauce'
+}, {
+name: 'curry',
+ingredients: 'rice, chicken, curry sauce'
+}
+*/
