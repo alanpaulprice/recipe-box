@@ -7,7 +7,7 @@ import Recipe from './components/recipe.js';
 import AddRecipeModal from './components/add-recipe-modal.js';
 import DeleteRecipeModal from './components/delete-recipe-modal.js';
 import EditRecipeModal from './components/edit-recipe-modal.js';
-localStorage.clear()
+
 class App extends Component {
 
   constructor(props) {
@@ -109,7 +109,7 @@ class App extends Component {
         ingredients: this.state.addModal.ingredients
       })
       this.setState(tempState);
-      //localStorage.setItem('appData', this.state);
+      localStorage.setItem('appData', JSON.stringify(this.state));
     }
 
     // ===== EDIT RECIPE =====
@@ -140,7 +140,7 @@ class App extends Component {
       let tempState = this.state;
       tempState.recipes[this.state.editTargetIndex] = this.state.editModal;
       this.setState(tempState);
-      //localStorage.setItem('appData', this.state);
+      localStorage.setItem('appData', JSON.stringify(this.state));
     }
 
     // ===== DELETE RECIPE =====
@@ -156,7 +156,7 @@ class App extends Component {
       tempState.recipes.splice(this.state.deleteTargetIndex, 1);
       tempState.deleteTargetIndex = null;
       this.setState(tempState);
-      //localStorage.setItem('appData', this.state);
+      localStorage.setItem('appData', JSON.stringify(this.state));
     }
 
     // ===== =====
