@@ -106,7 +106,7 @@ class App extends Component {
       let tempState = this.state;
       tempState.recipes.push({
         name: this.state.addModal.name,
-        ingredients: this.state.addModal.ingredients
+        ingredients: this.cleanUpIngredsStr(this.state.addModal.ingredients)
       })
       this.setState(tempState);
       localStorage.setItem('appData', JSON.stringify(this.state));
@@ -138,7 +138,11 @@ class App extends Component {
 
     editRecipe(){
       let tempState = this.state;
-      tempState.recipes[this.state.editTargetIndex] = this.state.editModal;
+      tempState.recipes[this.state.editTargetIndex] = Object.assign(
+        this.state.editModal,
+        {ingredients: this.cleanUpIngredsStr(this.state.editModal.ingredients)}
+      );
+      tempState.recipes[this.state.editTargetIndex].ingredients
       this.setState(tempState);
       localStorage.setItem('appData', JSON.stringify(this.state));
     }
@@ -161,37 +165,12 @@ class App extends Component {
 
     // ===== =====
 
-    removeUnwantedSpaces(str) {
-      return str.replace(/\s{2,}/g, ' ').trim();
+    cleanUpIngredsStr(str) {
+      return (str.replace(/\s{2,}/g, ' ')
+                 .replace(/,\s,/g, '')
+                 .replace(/,{1,}$/g, '')
+                 .trim());
     }
   }
 
   ReactDOM.render(<App/>, document.getElementById('container'));
-
-  /*
-  {
-  editTargetIndex: null,
-  deleteTargetIndex: null,
-  addModal: {
-  name: '',
-  ingredients: ''
-},
-editModal: {
-name: '',
-ingredients: ''
-},
-recipes: []
-}
-
-
-{
-name: 'pasta',
-ingredients: 'noodles, tomato sauce, meatballs'
-}, {
-name: 'special sauce',
-ingredients: 'rice, sausages, special sauce'
-}, {
-name: 'curry',
-ingredients: 'rice, chicken, curry sauce'
-}
-*/
