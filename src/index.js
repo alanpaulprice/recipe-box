@@ -167,8 +167,10 @@ class App extends Component {
 
     cleanUpIngredsStr(str) {
       return (str.replace(/\s{2,}/g, ' ')
-                 .replace(/,\s,/g, '')
+                 .replace(/,\s,/g, ',')
                  .replace(/,{1,}$/g, '')
+                 .replace(/^,{1,}/g, '')
+                 .replace(/,(?=[^\s])/g, ', ')
                  .trim());
     }
   }
