@@ -50,14 +50,16 @@ class App extends Component {
           })
         }
       </div>
-      <button
-        type="button"
-        className="btn"
-        data-toggle="modal"
-        data-target="#addModal"
-        onClick={this.beginAddingRecipe.bind(this)}>
-        Add Recipe
-      </button>
+      <div className='text-center'>
+        <button
+          type='button'
+          className='btn'
+          data-toggle='modal'
+          data-target='#addModal'
+          onClick={this.beginAddingRecipe.bind(this)}>
+          Add Recipe
+        </button>
+      </div>
 
       <DeleteRecipeModal
         deleteRecipe={this.deleteRecipe.bind(this)}

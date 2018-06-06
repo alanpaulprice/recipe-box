@@ -23,24 +23,26 @@ const RecipeBody = props => {
           ) : (
             <p>This recipe has no ingredients. Click the 'edit' button below to add some.</p>
           )}
-          <button
-            type='button'
-            className='btn btn-secondary'
-            data-toggle='modal'
-            data-target='#editModal'
-            onClick={() => props.beginEditingRecipe(props.recipeIndex)}
-            >
-              Edit
-            </button>
+          <div className='text-right'>
             <button
               type='button'
-              className='btn btn-danger'
+              className='btn btn-secondary'
               data-toggle='modal'
-              data-target='#deleteModal'
-              onClick={() => props.beginDeletingRecipe(props.recipeIndex)}
+              data-target='#editModal'
+              onClick={() => props.beginEditingRecipe(props.recipeIndex)}
               >
-                Delete
+                Edit
               </button>
+              <button
+                type='button'
+                className='btn btn-danger'
+                data-toggle='modal'
+                data-target='#deleteModal'
+                onClick={() => props.beginDeletingRecipe(props.recipeIndex)}
+                >
+                  Delete
+                </button>
+              </div>
             </div>
           </div>
         );
