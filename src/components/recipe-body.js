@@ -35,7 +35,7 @@ const RecipeBody = props => {
               </button>
               <button
                 type='button'
-                className='btn btn-danger'
+                className='btn btn-danger ml-1'
                 data-toggle='modal'
                 data-target='#deleteModal'
                 onClick={() => props.beginDeletingRecipe(props.recipeIndex)}

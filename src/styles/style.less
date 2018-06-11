@@ -1,6 +1,6 @@
 // B3D89C 808080
-@color-1: #B3D89C;
-@color-2: darken(@color-1, 50%);
+@color-1: #FCDDBB;
+@color-2: darken(@color-1, 25%);
 
 *{
   box-sizing: border-box;
@@ -14,12 +14,64 @@ html, html body, #container{
 
 .header{
   margin-top: 8px;
+  font-size: 3rem;
 }
+
+// ===== RECIPES =====
 
 .card .card-header{
   padding: 0;
+  h5 button{
+    font-size: 1.25rem;
+  }
 }
+
+.card-body{
+  font-size: 1.175rem;
+}
+
+// ===== MODALS =====
+
+.modal-header h5{
+  font-size: 1.25rem;
+}
+
+.modal-body{
+  form .form-group{
+    label{
+      font-size: 1.175rem;
+    }
+    input, textarea{
+      font-size: 1rem;
+      &:focus{
+        box-shadow: 0 0 0 0.2rem @color-1;
+        border-color: @color-1;
+      }
+    }
+  }
+  .delete-modal-body-text{
+    font-size: 1.175rem;
+  }
+}
+
+.modal-footer{
+  .btn-primary {
+    color: #fff;
+    background-color: @color-2;
+    border-color: @color-2;
+    &:hover{
+      background-color: darken(@color-2, 10%);
+      border-color: darken(@color-2, 10%);
+    }
+  }
+}
+
+// ===== =====
 
 button.btn:focus{
   box-shadow: none;
+}
+
+#addRecipeBtn{
+  font-size: 1rem;
 }

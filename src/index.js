@@ -35,7 +35,7 @@ class App extends Component {
   render() {
     return (<div>
       <h1 className='header text-center'>Recipe Box</h1>
-      <div id='accordion'>
+      <div id='accordion' className='mt-3 mb-3'>
         {
           this.state.recipes.map((recipe, recipeIndex) => {
             return(
@@ -52,6 +52,7 @@ class App extends Component {
       </div>
       <div className='text-center'>
         <button
+          id='addRecipeBtn'
           type='button'
           className='btn'
           data-toggle='modal'
@@ -61,10 +62,6 @@ class App extends Component {
         </button>
       </div>
 
-      <DeleteRecipeModal
-        deleteRecipe={this.deleteRecipe.bind(this)}
-        nameOfRecipeToBeDeleted={(this.state.deleteTargetIndex !== null) ? this.state.recipes[this.state.deleteTargetIndex].name: ''}
-        deleteTargetIndex={this.state.deleteTargetIndex}/>
         <AddRecipeModal
           name={this.state.addModal.name}
           ingredients={this.state.addModal.ingredients}
@@ -80,6 +77,10 @@ class App extends Component {
           onEditRecipeIngredientsChange={this.onEditRecipeIngredientsChange.bind(this)}
           editRecipe={this.editRecipe.bind(this)}
         />
+        <DeleteRecipeModal
+          deleteRecipe={this.deleteRecipe.bind(this)}
+          nameOfRecipeToBeDeleted={(this.state.deleteTargetIndex !== null) ? this.state.recipes[this.state.deleteTargetIndex].name: ''}
+          deleteTargetIndex={this.state.deleteTargetIndex}/>
       </div>);
     }
     // ===== ADD RECIPE =====
