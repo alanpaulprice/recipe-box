@@ -158,12 +158,12 @@ class App extends Component {
     // ===== =====
 
     cleanUpIngredsStr(str) {
-      return (str.replace(/\s{2,}/g, ' ')
-                 .replace(/,\s,/g, ',')
-                 .replace(/,{1,}$/g, '')
-                 .replace(/^,{1,}/g, '')
-                 .replace(/,(?=[^\s])/g, ', ')
-                 .trim());
+      return (str.replace(/\s{2,}/g, ' ') // replace 2 spaces with one
+                 .replace(/,\s,/g, ',') // replace ', ,' with a comma
+                 .replace(/,{1,}$/g, '') // remove any commas at end of string
+                 .replace(/^,{1,}/g, '') // remove any commas at start of string
+                 .replace(/,(?=[^\s])/g, ', ') // all commas followed by a space
+                 .trim()); // remove white space from start and end
     }
   }
 
