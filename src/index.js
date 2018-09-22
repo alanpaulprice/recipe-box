@@ -159,6 +159,7 @@ class App extends Component {
 
     cleanUpIngredsStr(str) {
       return (str.replace(/\s{2,}/g, ' ') // replace 2 spaces with one
+                 .replace(/,{2,}/g, ',') // replace 2 commas with one
                  .replace(/,\s,/g, ',') // replace ', ,' with a comma
                  .replace(/,{1,}$/g, '') // remove any commas at end of string
                  .replace(/^,{1,}/g, '') // remove any commas at start of string
