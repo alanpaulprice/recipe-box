@@ -101,7 +101,7 @@ class App extends Component {
       let tempState = this.state;
       tempState.recipes.push({
         name: this.state.addModal.name,
-        ingredients: this.cleanUpIngredsStr(this.state.addModal.ingredients)
+        ingredients: this.formatIngredientsString(this.state.addModal.ingredients)
       })
       this.setState(tempState);
       localStorage.setItem('appData', JSON.stringify(this.state));
@@ -137,7 +137,7 @@ class App extends Component {
       let tempState = this.state;
       tempState.recipes[this.state.editTargetIndex] = Object.assign(
         this.state.editModal,
-        {ingredients: this.cleanUpIngredsStr(this.state.editModal.ingredients)}
+        {ingredients: this.formatIngredientsString(this.state.editModal.ingredients)}
       );
       tempState.recipes[this.state.editTargetIndex].ingredients
       this.setState(tempState);
@@ -162,8 +162,8 @@ class App extends Component {
 
     // ===== =====
 
-    cleanUpIngredsStr(str) {
       return (str.replace(/\s{2,}/g, ' ') // replace 2 spaces with one
+    formatIngredientsString(str) {
                  .replace(/,{2,}/g, ',') // replace 2 commas with one
                  .replace(/,\s,/g, ',') // replace ', ,' with a comma
                  .replace(/,{1,}$/g, '') // remove any commas at end of string
