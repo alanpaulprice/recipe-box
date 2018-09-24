@@ -162,8 +162,9 @@ class App extends Component {
 
     // ===== =====
 
-      return (str.replace(/\s{2,}/g, ' ') // replace 2 spaces with one
     formatIngredientsString(str) {
+      return (str.replace(/\n|\t|\r/g, '') // remove all tabs and new line chars
+                 .replace(/\s{2,}/g, ' ') // replace 2 spaces with one
                  .replace(/,{2,}/g, ',') // replace 2 commas with one
                  .replace(/,\s,/g, ',') // replace ', ,' with a comma
                  .replace(/,{1,}$/g, '') // remove any commas at end of string
