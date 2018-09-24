@@ -13,9 +13,11 @@ class App extends Component {
 
   constructor(props) {
     super(props)
+    // if local storage is empty, set it to the default state
     if (!localStorage.getItem('appData')) {
       localStorage.setItem('appData', defaultState());
     }
+    // set state to data from local storage
     this.state = JSON.parse(localStorage.getItem('appData'));
   }
 
@@ -58,7 +60,6 @@ class App extends Component {
           onAddRecipeNameChange={this.onAddRecipeNameChange.bind(this)}
           onAddRecipeIngredientsChange={this.onAddRecipeIngredientsChange.bind(this)}
         />
-
         <EditRecipeModal
           name={this.state.editModal.name}
           ingredients={this.state.editModal.ingredients}
@@ -74,6 +75,7 @@ class App extends Component {
     }
     // ===== ADD RECIPE =====
     beginAddingRecipe() {
+      // empty the add modal fields
       let tempState = this.state;
       tempState.addModal = {
         name: '',
@@ -95,6 +97,7 @@ class App extends Component {
     }
 
     addRecipe() {
+      // add recipe to state, update local storage
       let tempState = this.state;
       tempState.recipes.push({
         name: this.state.addModal.name,
@@ -107,6 +110,8 @@ class App extends Component {
     // ===== EDIT RECIPE =====
 
     beginEditingRecipe(recipeIndex) {
+      // update edit modal index
+      // populate edit modal with relevant recipe data
       let tempState = this.state;
       tempState.editTargetIndex = recipeIndex;
       tempState.editModal = {
