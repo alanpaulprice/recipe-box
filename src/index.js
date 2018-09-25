@@ -23,7 +23,7 @@ class App extends Component {
 
   render() {
     return (<div>
-      <h1 className='header text-center'>Recipe Box</h1>
+      <h1 className='header text-center my-5'>Recipe Box</h1>
       <div className='row justify-content-center'>
       <div id='accordion' className='mt-3 mb-3 col-12 col-sm-12 col-md-10 col-lg-8'>
         {

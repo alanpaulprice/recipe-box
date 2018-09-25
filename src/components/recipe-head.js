@@ -2,7 +2,7 @@ import React from 'react';
 
 const RecipeHead = props => {
   return (
-    <div className='card-header' id={'heading' + props.recipeIndex}>
+    <div className='card-header p-0' id={'heading' + props.recipeIndex}>
       <h5 className='mb-0'>
         <button
           className='btn btn-block'
