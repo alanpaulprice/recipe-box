@@ -1,11 +1,10 @@
 // B3D89C 808080 654236 FCDDBB
 @color-1: #654236;
-@color-2: darken(@color-1, 25%);
 
 *{
   box-sizing: border-box;
-  color: @color-2;
   font-family: 'Open Sans', sans-serif;
+  color: @color-1;
 }
 
 html body, #container{
@@ -26,7 +25,7 @@ html body, #container{
 }
 
 .card-body{
-  font-size: 1.175rem;
+  font-size: 1rem;
 }
 
 // ===== MODALS =====
@@ -43,7 +42,7 @@ html body, #container{
     input, textarea{
       font-size: 1rem;
       &:focus{
-        box-shadow: 0 0 0 0.2rem @color-1;
+        box-shadow: 0 0 0 0.2rem transparent;
         border-color: @color-1;
       }
     }
@@ -56,11 +55,12 @@ html body, #container{
 .modal-footer{
   .btn-primary {
     color: #fff;
-    background-color: @color-2;
-    border-color: @color-2;
+    font-size: 1rem;
+    background-color: @color-1;
+    border-color: @color-1;
     &:hover{
-      background-color: darken(@color-2, 10%);
-      border-color: darken(@color-2, 10%);
+      background-color: darken(@color-1, 10%);
+      border-color: darken(@color-1, 10%);
     }
   }
 }
