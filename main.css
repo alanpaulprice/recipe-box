@@ -1,25 +1,21 @@
 * {
   box-sizing: border-box;
-  font-family: 'Do Hyeon', sans-serif;
-  color: #120c0a;
+  font-family: 'Open Sans', sans-serif;
+  color: #654236;
 }
 html body,
 #container {
   min-width: 350px;
 }
 .header {
-  margin: 3rem 0;
   font-size: 3rem;
   font-family: 'Permanent Marker', cursive;
-}
-.card .card-header {
-  padding: 0;
 }
 .card .card-header h5 button {
   font-size: 1.25rem;
 }
 .card-body {
-  font-size: 1.175rem;
+  font-size: 1rem;
 }
 .modal-header h5 {
   font-size: 1.25rem;
@@ -33,7 +29,7 @@ html body,
 }
 .modal-body form .form-group input:focus,
 .modal-body form .form-group textarea:focus {
-  box-shadow: 0 0 0 0.2rem #654236;
+  box-shadow: 0 0 0 0.2rem transparent;
   border-color: #654236;
 }
 .modal-body .delete-modal-body-text {
@@ -41,12 +37,13 @@ html body,
 }
 .modal-footer .btn-primary {
   color: #fff;
-  background-color: #120c0a;
-  border-color: #120c0a;
+  font-size: 1rem;
+  background-color: #654236;
+  border-color: #654236;
 }
 .modal-footer .btn-primary:hover {
-  background-color: #000000;
-  border-color: #000000;
+  background-color: #442c24;
+  border-color: #442c24;
 }
 button.btn:focus {
   box-shadow: none;
