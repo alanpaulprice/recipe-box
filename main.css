@@ -1,17 +1,16 @@
 * {
   box-sizing: border-box;
   font-family: 'Do Hyeon', sans-serif;
-  color: #f7a041;
+  color: #120c0a;
 }
-html,
 html body,
 #container {
-  background-color: #FCDDBB;
   min-width: 350px;
 }
 .header {
-  margin-top: 8px;
+  margin: 3rem 0;
   font-size: 3rem;
+  font-family: 'Permanent Marker', cursive;
 }
 .card .card-header {
   padding: 0;
@@ -34,20 +33,20 @@ html body,
 }
 .modal-body form .form-group input:focus,
 .modal-body form .form-group textarea:focus {
-  box-shadow: 0 0 0 0.2rem #FCDDBB;
-  border-color: #FCDDBB;
+  box-shadow: 0 0 0 0.2rem #654236;
+  border-color: #654236;
 }
 .modal-body .delete-modal-body-text {
   font-size: 1.175rem;
 }
 .modal-footer .btn-primary {
   color: #fff;
-  background-color: #f7a041;
-  border-color: #f7a041;
+  background-color: #120c0a;
+  border-color: #120c0a;
 }
 .modal-footer .btn-primary:hover {
-  background-color: #f48810;
-  border-color: #f48810;
+  background-color: #000000;
+  border-color: #000000;
 }
 button.btn:focus {
   box-shadow: none;
