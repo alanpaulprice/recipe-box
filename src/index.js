@@ -22,8 +22,8 @@ class App extends Component {
   }
 
   render() {
-      <h1 className='header text-center my-5'>Recipe Box</h1>
     return (<div id='container' class='py-5'>
+      <h1 className='header text-center'>Recipe Box</h1>
       <div className='row justify-content-center mt-5'>
       <div id='accordion' className='mt-3 mb-3 col-12 col-sm-12 col-md-10 col-lg-8'>
         {
