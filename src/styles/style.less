@@ -1,5 +1,6 @@
 // B3D89C 808080 654236 FCDDBB
-@color-1: #654236;
+@color-1: #ffffff;
+@color-2: #000000;
 
 *{
   box-sizing: border-box;
@@ -7,10 +8,12 @@
   color: @color-1;
 }
 
-html body, #container{
+#container{
   min-width: 350px;
   max-width: 960px;
+  min-height: 100vh;
   margin: 0 auto;
+  background-color: @color-2;
 }
 
 .header{
