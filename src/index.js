@@ -45,7 +45,7 @@ class App extends Component {
         <button
           id='addRecipeBtn'
           type='button'
-          className='btn'
+          className='btn btn-primary'
           data-toggle='modal'
           data-target='#addModal'
           onClick={this.beginAddingRecipe.bind(this)}>

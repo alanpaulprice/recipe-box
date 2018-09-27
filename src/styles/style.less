@@ -69,17 +69,7 @@
   }
 
   .modal-footer{
-    background-color: @color-2;
-    .btn-primary {
-      background-color: @color-2;
-      color: #fff;
-      font-size: 1rem;
-      border-color: @color-1;
-      &:hover{
-        background-color: lighten(@color-2, 5%);
-        border-color: darken(@color-1, 50%);
-      }
-    }
+    background-color: @color-2
   }
 }
 
@@ -89,8 +79,14 @@ button.btn:focus{
   box-shadow: none;
 }
 
-#addRecipeBtn{
-  font-size: 1rem;
+.btn.btn-primary{
   background-color: @color-2;
+  color: @color-1;
+  font-size: 1rem;
   border-color: @color-1;
+  &:hover{
+    background-color: @color-2;//lighten(@color-2, 5%);
+    color: darken(@color-1, 25%);
+    border-color: darken(@color-1, 25%);
+  }
 }
