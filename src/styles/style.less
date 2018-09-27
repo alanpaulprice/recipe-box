@@ -57,9 +57,11 @@
       }
       input, textarea{
         font-size: 1rem;
+        color: lighten(@color-2, 25%);
+        border: 2.5px solid @color-2;
         &:focus{
           box-shadow: 0 0 0 0.2rem transparent;
-          border-color: @color-1;
+          border-color: lighten(@color-2, 50%);
         }
       }
     }
@@ -85,9 +87,9 @@ button.btn:focus{
   font-size: 1rem;
   border-color: @color-1;
   &:hover{
-    background-color: @color-2;
-    color: darken(@color-1, 25%);
-    border-color: darken(@color-1, 25%);
+    background-color: @color-1;//@color-2;
+    color: @color-2;//darken(@color-1, 25%);
+    border-color: @color-1;//darken(@color-1, 25%);
   }
 }
 

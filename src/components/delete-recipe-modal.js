@@ -19,7 +19,7 @@ const DeleteRecipeModal = props => {
           </div>
           </div>
           <div className='modal-footer'>
-            <button type='button' className='btn btn-secondary' data-dismiss='modal'>Cancel</button>
+            <button type='button' className='btn btn-primary' data-dismiss='modal'>Cancel</button>
             <a
               data-toggle='collapse'
               data-target={'#collapse' + props.deleteTargetIndex}
