@@ -27,46 +27,58 @@
   h5 button{
     font-family: 'Permanent Marker', cursive;
     font-size: 1.5rem;
+    background-color: @color-2;
   }
 }
 
 .card-body{
   font-size: 1rem;
+  background-color: @color-2;
 }
 
 // ===== MODALS =====
 
-.modal-header h5{
-  font-size: 1.25rem;
+.modal-dialog{
+  border: 1px solid @color-1;
 }
 
-.modal-body{
-  form .form-group{
-    label{
-      font-size: 1.175rem;
+.modal-content{
+  .modal-header{
+    background-color: @color-2;
+    h5{
+      font-size: 1.25rem;
     }
-    input, textarea{
-      font-size: 1rem;
-      &:focus{
-        box-shadow: 0 0 0 0.2rem transparent;
-        border-color: @color-1;
+  }
+  .modal-body{
+    background-color: @color-2;
+    form .form-group{
+      label{
+        font-size: 1.175rem;
+      }
+      input, textarea{
+        font-size: 1rem;
+        &:focus{
+          box-shadow: 0 0 0 0.2rem transparent;
+          border-color: @color-1;
+        }
       }
     }
+    .delete-modal-body-text{
+      font-size: 1rem;
+    }
   }
-  .delete-modal-body-text{
-    font-size: 1.175rem;
-  }
-}
 
-.modal-footer{
-  .btn-primary {
-    color: #fff;
-    font-size: 1rem;
-    background-color: @color-1;
-    border-color: @color-1;
-    &:hover{
-      background-color: darken(@color-1, 10%);
-      border-color: darken(@color-1, 10%);
+  .modal-footer{
+    background-color: @color-2;
+    .btn-primary {
+      background-color: @color-2;
+      color: #fff;
+      font-size: 1rem;
+      border-color: @color-1;
+      &:hover{
+        background-color: lighten(@color-2, 5%);
+        border-color: darken(@color-1, 50%);
+      }
     }
   }
 }
@@ -79,4 +91,6 @@ button.btn:focus{
 
 #addRecipeBtn{
   font-size: 1rem;
+  background-color: @color-2;
+  border-color: @color-1;
 }
