@@ -31,7 +31,7 @@ const EditRecipeModal = props => {
                   value={props.ingredients}
                   onChange={(event) => props.onEditRecipeIngredientsChange(event.target.value)}
                 />
-                <small className='form-text text-muted'>Seperate each ingredient with a comma.</small>
+                <small className='form-text'>Seperate each ingredient with a comma.</small>
               </div>
             </form>
 
