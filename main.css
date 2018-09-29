@@ -1,55 +1,77 @@
 * {
   box-sizing: border-box;
   font-family: 'Open Sans', sans-serif;
-  color: #654236;
+  color: #ffffff;
 }
-html body,
 #container {
   min-width: 350px;
+  max-width: 960px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background-color: #000000;
 }
 .header {
-  font-size: 3rem;
+  font-size: 4rem;
   font-family: 'Permanent Marker', cursive;
 }
 .card .card-header h5 button {
-  font-size: 1.25rem;
+  font-family: 'Permanent Marker', cursive;
+  font-size: 1.5rem;
+  background-color: #000000;
 }
 .card-body {
   font-size: 1rem;
+  background-color: #000000;
 }
-.modal-header h5 {
+.modal-dialog {
+  border: 1px solid #ffffff;
+}
+.modal-content .modal-header {
+  background-color: #000000;
+}
+.modal-content .modal-header h5 {
   font-size: 1.25rem;
 }
-.modal-body form .form-group label {
+.modal-content .modal-body {
+  background-color: #000000;
+}
+.modal-content .modal-body form .form-group label {
   font-size: 1.175rem;
 }
-.modal-body form .form-group input,
-.modal-body form .form-group textarea {
+.modal-content .modal-body form .form-group input,
+.modal-content .modal-body form .form-group textarea {
   font-size: 1rem;
+  color: #404040;
+  border: 2.5px solid #000000;
 }
-.modal-body form .form-group input:focus,
-.modal-body form .form-group textarea:focus {
+.modal-content .modal-body form .form-group input:focus,
+.modal-content .modal-body form .form-group textarea:focus {
   box-shadow: 0 0 0 0.2rem transparent;
-  border-color: #654236;
+  border-color: #808080;
 }
-.modal-body .delete-modal-body-text {
-  font-size: 1.175rem;
-}
-.modal-footer .btn-primary {
-  color: #fff;
+.modal-content .modal-body .delete-modal-body-text {
   font-size: 1rem;
-  background-color: #654236;
-  border-color: #654236;
 }
-.modal-footer .btn-primary:hover {
-  background-color: #442c24;
-  border-color: #442c24;
+.modal-content .modal-footer {
+  background-color: #000000;
 }
 button.btn:focus {
   box-shadow: none;
 }
-#addRecipeBtn {
+.btn.btn-primary {
+  background-color: #000000;
+  color: #ffffff;
   font-size: 1rem;
+  border-color: #ffffff;
+}
+.btn.btn-primary:hover {
+  background-color: #ffffff;
+  color: #000000;
+  border-color: #ffffff;
+}
+.btn.btn-danger {
+  background-color: #000000;
+  color: #dc3545;
 }
 
 /*!
